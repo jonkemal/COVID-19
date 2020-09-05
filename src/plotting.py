@@ -21,9 +21,8 @@ def plot_results(results: list, stat: str,
                  target_date: date, save_path: str) -> None:
 
     # Will use 5 bins and this color scheme.
-    colorscale = ["#b7e0e4", "#b7e0e4", "#4989bc",
-                  "#3d4b94", "#1d1d3b", "#030512"]
-                  
+    colorscale = ["#030512", "#323268", "#3e6ab0",
+                  "#60a7c7", "#85c5d3", "#b7e0e4"]
 
     # What will ultimatedly be plotted: fips for each county in each range,
     # and the values (e.g. total cases in region).
