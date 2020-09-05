@@ -51,8 +51,27 @@ Note: If this is not selected, the most recent date will be used.
 
 6) Save Path: If you want to save the images to a path instead of outputting them to the screen, use this.
 
+### Outputs
+1) A plot of the raw total of a statistic over a list of specified regions.
+2) A plot of the population density (stat/100000 people) over a list of specified regions.
+Notes: Examples are found in:
+example_output/date/cases_totals.png
+example_output/date/cases_density.png
+example_output/date/deaths_totals.png
+example_output/date/deaths_density.png
+Where "date" in these examples is either 2020-09-04 (latest) or 2020-07-15.
+
+Figures can be displayed to the screen instead of saved if requested.
+
+### Usage
+The following commands will reproduce the examples in the example_output directory.
+python3 run.py -I input/example_input2.csv -S cases --save-path example_output/2020-09-04
+python3 run.py -I input/example_input2.csv -S deaths --save-path example_output/2020-09-04
+python3 run.py -I input/example_input2.csv -S cases --save-path example_output/2020-07-15 -T 2020-07-15 -D input/us-counties-all.csv
+python3 run.py -I input/example_input2.csv -S deaths --save-path example_output/2020-07-15 -T 2020-07-15 -D input/us-counties-all.csv
+
 Example usage output:
-% python3 run.py -I input/example1.csv -S cases --save-path output -h
+% python3 run.py -h
 usage: run.py [-h] [-D counties_data] [-G geocodes] [-T target_date] [--save-path save_path] -S statistic -I input_path
 
 Visualize COVID-19 data for specified region.
@@ -71,16 +90,6 @@ optional arguments:
                         Statistic to analyze (eg. cases, deaths). (default: None)
   -I input_path, --input input_path
                         Path to input csv file. (default: None)
-
-### Outputs
-1) A plot of the raw total of a statistic over a list of specified regions.
-2) A plot of the population density (stat/100000 people) over a list of specified regions.
-Notes: Examples are found in:
-example_output/cases_totals.png
-example_output/cases_density.png
-example_output/deaths_totals.png
-example_output/deaths_density.png
-These can be displayed to the screen instead of saved if requested.
 
 ### Installation:
 In order to use the plotly plotting functions, some libraries need to be installed.
